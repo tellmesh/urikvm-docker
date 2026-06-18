@@ -14,7 +14,6 @@ real = ["litellm>=1.40"]
 
 [tool.uv.sources]
 urikvmedge = { path = "../urikvmedge", editable = true }
-urisysedge = { path = "../urisysedge", editable = true }
 urioperators = { path = "../urioperators", editable = true }
 urikvm = { path = "../urikvm", editable = true }
 urihim = { path = "../urihim", editable = true }

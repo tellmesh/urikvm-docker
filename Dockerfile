@@ -5,7 +5,8 @@
 #
 FROM python:3.12-slim
 WORKDIR /build
-COPY urisysedge /build/urisysedge
+COPY urirouter /build/urirouter
+COPY uricore /build/uricore
 COPY urioperators /build/urioperators
 COPY urikvm /build/urikvm
 COPY urihim /build/urihim
@@ -14,7 +15,8 @@ COPY urillm /build/urillm
 COPY urikvmedge /build/urikvmedge
 COPY urikvm-docker /build/urikvm-docker
 RUN pip install --no-cache-dir \
-    -e /build/urisysedge \
+    -e /build/urirouter \
+    -e /build/uricore \
     -e /build/urioperators \
     -e /build/urikvm \
     -e /build/urihim \
