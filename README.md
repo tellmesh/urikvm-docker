@@ -17,7 +17,7 @@ Docker runs in mock mode, so it does not control the host mouse or keyboard.
 tellmesh/
 ├── urikvmedge/     → urisys-kvm CLI + HTTP (:8794)
 ├── urikvm/ urihim/ uriocr/ urillm/
-├── `uricore` (`uri_control.edge`)/     → Runtime + shared HTTP transport
+├── `uricontrol` (`uri_control.edge`)/     → Runtime + shared HTTP transport
 └── urikvm-docker/  → Dockerfile, config, flows, markpacts
 ```
 
@@ -59,16 +59,16 @@ export OPENAI_API_KEY=sk-...
 
 ## Ekosystem TellMesh
 
-Orchestrator: **[urisys](https://github.com/tellmesh/urisys)** · Mapa: **[MESH.md](https://github.com/tellmesh/urisys/blob/main/docs/MESH.md)** · Model: **[ECOSYSTEM.md](https://github.com/tellmesh/urisys/blob/main/../docs/ECOSYSTEM.md)**
+Orchestrator: **[urisys](https://github.com/tellmesh/urisys)** · Mapa: **[MESH.md](https://github.com/tellmesh/urisys/blob/main/docs/MESH.md)** · Model: **[ECOSYSTEM.md](https://github.com/tellmesh/urisys/blob/main/docs/ECOSYSTEM.md)**
 
 | Pole | Wartość |
 |------|---------|
 | **Warstwa** | Docker glue |
 | **Obraz** | kvm/him/ocr/llm bundle |
 | **Build** | `docker build -f urikvm-docker/Dockerfile tellmesh/` |
-| **Zależności** | urirouter, uricore, urikvmedge |
+| **Zależności** | uriresolver, uriguard, uricontrol, urikvmedge |
 
-Runtime edge: **`uri_control.edge`** w pakiecie **`uricore`** (legacy `urisysedge` usunięty 2026-06).
-Router intencji: **`urirouter`** (`uri_router`) — resolve + HTTP/MQTT delegate.
+Runtime edge: **`uri_control.edge`** w pakiecie **`uricontrol`** (legacy PyPI `uricore` / `urisysedge` usunięty 2026-06).
+Resolver intencji: **`uriresolver`** (`uri_resolver`) + transport w **`uritransport`**; policy gate: **`uriguard`** (`uri_guard`).
 
 <!-- end-ecosystem -->

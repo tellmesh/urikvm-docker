@@ -8,7 +8,7 @@
 HTTP client
   → POST /uri/call :8794
   → urikvmedge (urisys-kvm)
-  → urisysedge.Runtime + uri_control.edge.http.serve
+  → `uri_control.edge`.Runtime + uri_control.edge.http.serve
   → standalone packs:
        urikvm   (kvm://)
        urihim   (him://)
